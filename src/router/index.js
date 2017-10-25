@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Main from '@/components/Main'
 import Update from '@/components/Update'
+import Settings from '@/components/Settings'
+import Customers from '@/components/Customers'
 
 Vue.use(Router)
 
@@ -9,13 +11,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Main',
+      component: Main
     },
     {
-      path: '/update',
-      name: 'Update',
-      component: Update
+      path: '/settings',
+      name: 'Settings',
+      component: Settings
+    },
+    {
+      path: '/customers',
+      name: 'Customers',
+      component: Customers
     }
   ]
 })

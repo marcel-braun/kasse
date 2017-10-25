@@ -1,26 +1,41 @@
 <template>
   <div id="app">
-    <md-toolbar-container>
       <md-toolbar class="md-accent">
-        <md-button class="md-icon-button">
-          <md-icon>menu</md-icon>
+        <md-button class="md-icon-button" v-on:click="homeOnClickHandler">
+          <md-icon>view_quilt</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" v-on:click="customersOnClickHandler">
+          <md-icon>supervisor_account</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" v-on:click="settingsOnClickHandler">
+          <md-icon>settings</md-icon>
         </md-button>
 
-        <h2 class="md-title" style="flex: 1">Vue Material</h2>
+        <h2 class="md-title" style="flex: 1" id="title"></h2>
 
         <md-button class="md-icon-button">
           <md-icon>favorite</md-icon>
         </md-button>
     </md-toolbar>
-    </md-toolbar-container>
-    <img src="static/logo.png">
+   
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: "app"
+  name: "app",
+  methods: {
+    homeOnClickHandler: () => {
+      window.location.href = "#/"
+    },
+    customersOnClickHandler: () => {
+      window.location.href = "#/customers"
+    },
+    settingsOnClickHandler: () => {
+      window.location.href = "#/settings"
+    }
+  }
 };
 </script>
 

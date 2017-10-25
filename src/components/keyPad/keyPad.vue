@@ -1,22 +1,40 @@
 <template>
-    <div>
-        <h1>{{msg}}
-            <Button value="test" />
-        </h1>
+    <div class="container full-height">
+        <div class="button" v-for="(n, index) in 10" :key="index"><MButton :value="n"/></div>
     </div>
-</template>
+</template> 
 
 <script>
-    import Button from "@/components/keyPad/button";
-    
-    export default {
-        data() {
-            return {
-                msg: "Welcome to Your Vue.js App"
-            };
-        },
-        components: {
-            Button
-        }
+import MButton from "@/components/keyPad/button";
+
+export default {
+  data() {
+    return {
+        msg: "test",
+      keys: 5
     };
-</script> 
+  },
+  components: {
+    MButton
+  }
+};
+</script>
+
+<style scoped>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+
+}
+.button {
+    flex-grow: 1;
+    flex-basis: 25%;
+}
+button {
+    width: 100%;
+    height: 100%;
+}
+</style>
