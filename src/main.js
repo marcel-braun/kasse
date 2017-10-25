@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import KeyPad from '@/components/keyPad/keyPad'
+
+Vue.component('KeyPad', KeyPad)
 
 var VueMaterial = require('vue-material')
 Vue.use(VueMaterial)
